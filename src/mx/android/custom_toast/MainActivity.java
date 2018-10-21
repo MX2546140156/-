@@ -1,4 +1,4 @@
-package com.example.android_custom_toast;
+package mx.android.custom_toast;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -8,31 +8,31 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
-	private Button mButton;
+	private Button 测试按钮;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		mButton = (Button)findViewById(R.id.button);
-		mButton.setOnClickListener(new View.OnClickListener() {
+		测试按钮 = (Button)findViewById(R.id.按钮);
+		测试按钮.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				
-				CustomToast.getNewInstance(getApplicationContext());
-				CustomToast.show("Hello world!", Toast.LENGTH_LONG);
+				自定义Toast.getNewInstance(getApplicationContext());
+				自定义Toast.show(R.string.hello_world, Toast.LENGTH_SHORT);
 			}
 		});
 		
-		mButton.setOnLongClickListener(new View.OnLongClickListener() {
+		测试按钮.setOnLongClickListener(new View.OnLongClickListener() {
 			
 			@Override
 			public boolean onLongClick(View v) {
 
-				CustomToast.show("aaaa", Toast.LENGTH_SHORT);
-				return false;
+				自定义Toast.show("非字符串", Toast.LENGTH_LONG);
+				return true;
 			}
 		});
 
